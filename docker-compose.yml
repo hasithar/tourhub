@@ -32,7 +32,24 @@ services:
       - DB_PRODUCTION=${DB_PRODUCTION}
     volumes:
       - ./services/activities-service:/usr/src/app
-      - /usr/src/app/node_modules    
+      - /usr/src/app/node_modules  
+  # ------------------------------------------------------
+  # attraction service 
+  attraction-service:
+    build:
+      context: ./services/attraction-service
+    ports:
+      - "${ATTRACTION_SERVICE_PORT}:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DB_CONNECTION_STRING=${DB_CONNECTION_STRING}
+      - DB_APP_NAME=${DB_APP_NAME}
+      - DB_DEVELOPMENT=${DB_DEVELOPMENT}
+      - DB_TESTING=${DB_TESTING}
+      - DB_PRODUCTION=${DB_PRODUCTION}
+    volumes:
+      - ./services/attraction-service:/usr/src/app
+      - /usr/src/app/node_modules          
   # ------------------------------------------------------
   # api gateway 
   api-gateway:
