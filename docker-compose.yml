@@ -1,4 +1,6 @@
 services:
+  # ------------------------------------------------------
+  # accomodation service 
   accommodation-service:
     build:
       context: ./services/accommodation-service
@@ -14,6 +16,25 @@ services:
     volumes:
       - ./services/accommodation-service:/usr/src/app
       - /usr/src/app/node_modules
+  # ------------------------------------------------------
+  # activitiy service 
+  activity-service:
+    build:
+      context: ./services/activities-service
+    ports:
+      - "${ACTIVITY_SERVICE_PORT}:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DB_CONNECTION_STRING=${DB_CONNECTION_STRING}
+      - DB_APP_NAME=${DB_APP_NAME}
+      - DB_DEVELOPMENT=${DB_DEVELOPMENT}
+      - DB_TESTING=${DB_TESTING}
+      - DB_PRODUCTION=${DB_PRODUCTION}
+    volumes:
+      - ./services/activities-service:/usr/src/app
+      - /usr/src/app/node_modules    
+  # ------------------------------------------------------
+  # api gateway 
   api-gateway:
     build:
       context: ./api-gateway

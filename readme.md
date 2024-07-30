@@ -12,6 +12,8 @@ This repository contains the setup and configuration for the Intelligent Tour Hu
 
 - **`accommodation-service/`**: Manages accommodation-related data and operations.
 
+- **`activity-service/`**: Manages activity-related data and operations.
+
 - **`docker-compose.yml`**: Defines the Docker configuration for the entire project, including the API gateway and microservices.
 
 - **`.env`**: Environment variables for the project. This file should be configured with appropriate values for local development.
