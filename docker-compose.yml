@@ -1,0 +1,25 @@
+services:
+  accommodation-service:
+    build:
+      context: ./services/accommodation-service
+    ports:
+      - "${ACCOMODATION_SERVICE_PORT}:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DB_CONNECTION_STRING=${DB_CONNECTION_STRING}
+      - DB_APP_NAME=${DB_APP_NAME}
+      - DB_DEVELOPMENT=${DB_DEVELOPMENT}
+      - DB_TESTING=${DB_TESTING}
+      - DB_PRODUCTION=${DB_PRODUCTION}
+    volumes:
+      - ./services/accommodation-service:/usr/src/app
+      - /usr/src/app/node_modules
+  # api-gateway:
+  #   build:
+  #     context: ./api-gateway
+  #   ports:
+  #     - "8080:8080"
+  #   depends_on:
+  #     - accommodation-service
+  #   environment:
+  #     - NODE_ENV=production

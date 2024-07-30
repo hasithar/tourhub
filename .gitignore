@@ -1,0 +1,68 @@
+# Ignore environment files
+.env
+
+# Ignore services
+services/
+
+# Ignore API gateway
+api-gateway/
+
+# Ignore temp files and directories
+intelligent-tour-hub-main.zip
+intelligent-tour-hub-main/
+
+# Node modules
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# IDEs and editors
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# Ignore coverage reports
+coverage/
+*.lcov
+
+# Ignore build output
+dist/
+build/
+
+# Ignore Docker files
+.dockerignore
+docker-compose.override.yml
+
+# Ignore misc
+*.swp
+*~
+.project
+.classpath
+.c9/
+*.pid
+*.seed
+*.log
+*.pid.lock
+
+# Ignore documentation
+docs/
+*.md
+
+# Ignore testing files
+junit-reports/
+*.xml
+test-output/
+*.out
+test-reports/
