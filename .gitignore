@@ -58,7 +58,7 @@ docker-compose.override.yml
 
 # Ignore documentation
 docs/
-*.md
+# *.md
 
 # Ignore testing files
 junit-reports/
