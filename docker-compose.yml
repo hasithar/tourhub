@@ -49,7 +49,26 @@ services:
       - DB_PRODUCTION=${DB_PRODUCTION}
     volumes:
       - ./services/attraction-service:/usr/src/app
-      - /usr/src/app/node_modules          
+      - /usr/src/app/node_modules    
+  # ------------------------------------------------------
+  # user service 
+  user-service:
+    build:
+      context: ./services/user-service
+    ports:
+      - "${USER_SERVICE_PORT}:3000"
+    environment:
+      - NODE_ENV=${NODE_ENV}
+      - DB_CONNECTION_STRING=${DB_CONNECTION_STRING}
+      - DB_APP_NAME=${DB_APP_NAME}
+      - DB_DEVELOPMENT=${DB_DEVELOPMENT}
+      - DB_TESTING=${DB_TESTING}
+      - DB_PRODUCTION=${DB_PRODUCTION}
+      - JWT_SECRET=${JWT_SECRET}
+      - SESSION_SECRET=${SESSION_SECRET}
+    volumes:
+      - ./services/user-service:/usr/src/app
+      - /usr/src/app/node_modules              
   # ------------------------------------------------------
   # api gateway 
   api-gateway:

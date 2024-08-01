@@ -16,6 +16,8 @@ This repository contains the setup and configuration for the Intelligent Tour Hu
 
 - **`attraction-service/`**: Manages attraction-related data and operations.
 
+- **`user-service/`**: Manages user-related data and operations, including auth.
+
 - **`docker-compose.yml`**: Defines the Docker configuration for the entire project, including the API gateway and microservices.
 
 - **`.env`**: Environment variables for the project. This file should be configured with appropriate values for local development.
