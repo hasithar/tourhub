@@ -9,7 +9,7 @@ api-gateway/
 
 # Ignore frontends
 admin-backend/
-client-backend/
+client-frontend/
 
 # Ignore temp files and directories
 intelligent-tour-hub-main.zip
